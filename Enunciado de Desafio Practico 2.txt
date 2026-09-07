@@ -1,0 +1,90 @@
+Enunciado de Desafio Practico 2
+Ejercicio Práctico — Sistema de Gestión de Vehículos de una Flota
+
+
+Modalidad: Trabajo en parejas
+
+NO USAR ENTITY FRAMEWORK
+1. Contexto del problema
+Una empresa de transporte, "TransLogística SV", necesita un sistema web para administrar los vehículos de su flota. La flota está compuesta por distintos tipos de vehículos, cada uno con atributos y comportamientos particulares, pero todos comparten características comunes (placa, marca, modelo, año, kilometraje).
+
+La empresa requiere una aplicación ASP.NET MVC que permita registrar, listar, consultar, actualizar y calcular costos de mantenimiento de los vehículos, sin necesidad de una base de datos real: toda la información se mantendrá en memoria mediante estructuras Dictionary.
+
+2. Requerimientos funcionales
+El sistema debe permitir:
+
+Registrar un nuevo vehículo (de cualquier tipo derivado).
+Listar todos los vehículos registrados, mostrando el tipo específico de cada uno.
+Ver el detalle de un vehículo (incluyendo datos calculados propios de su tipo).
+Editar los datos de un vehículo existente.
+Eliminar un vehículo del sistema.
+Calcular el costo estimado de mantenimiento anual, cuyo cálculo varía según el tipo de vehículo (esto se resuelve mediante polimorfismo, no con if/else por tipo).
+3. Requerimientos técnicos de diseño (POO)
+3.1 Clase base abstracta
+Diseñar una clase abstracta Vehiculo con, al menos, los siguientes miembros:
+
+public abstract class Vehiculo
+{
+    public string Placa { get; set; }
+    public string Marca { get; set; }
+    public string Modelo { get; set; }
+    public int Anio { get; set; }
+    public double Kilometraje { get; set; }
+
+    public abstract double CalcularCostoMantenimiento();
+
+    public virtual string ObtenerResumen()
+    {
+        return $"{Marca} {Modelo} ({Anio}) - Placa: {Placa}";
+    }
+}
+3.2 Clases derivadas (mínimo 3)
+Cada una debe heredar de Vehiculo, agregar al menos un atributo propio y sobrescribir CalcularCostoMantenimiento() con una fórmula distinta. Ejemplos sugeridos (el estudiante puede proponer otros con justificación):
+
+Clase	Atributo propio sugerido	Criterio de costo de mantenimiento
+Camion	CapacidadCargaToneladas	Costo base + recargo por tonelada
+Automovil	TipoCombustible	Costo base + recargo si combustible es "Gasolina Premium"
+Motocicleta	Cilindraje	Costo base reducido, con recargo si cilindraje > 500cc
+Al menos una clase derivada debe sobrescribir también ObtenerResumen() usando base.ObtenerResumen() dentro de su implementación.
+
+3.3 Capa de almacenamiento (repositorio)
+Implementar una clase (por ejemplo VehiculoRepositorio) que use internamente:
+
+private static Dictionary<string, Vehiculo> _vehiculos = new Dictionary<string, Vehiculo>();
+Donde la llave sea la placa del vehículo. Esta clase debe exponer métodos como:
+
+Agregar(Vehiculo v)
+ObtenerTodos() → List<Vehiculo>
+ObtenerPorPlaca(string placa)
+Actualizar(string placa, Vehiculo v)
+Eliminar(string placa)
+Nota: El uso de Dictionary es obligatorio como mecanismo de persistencia en memoria; no se permite usar Entity Framework ni base de datos real en este ejercicio.
+3.4 Controlador y vistas
+Crear un VehiculosController con las acciones típicas: Index, Details, Create (GET/POST), Edit (GET/POST), Delete (GET/POST).
+Las vistas deben mostrar de forma diferenciada el tipo de vehículo (usar @Html.DisplayFor, comprobación de tipo con is/patrones, o una propiedad TipoVehiculo que cada clase derivada sobrescriba).
+En el formulario de creación, el usuario debe poder seleccionar el tipo de vehículo (por ejemplo, con un <select>) y el formulario debe adaptar los campos según el tipo elegido (puede resolverse con JavaScript básico o con vistas parciales).
+4. Distribución sugerida del trabajo en parejas
+Integrante	Responsabilidad principal
+Estudiante A	Diseño del modelo de dominio: clase abstracta Vehiculo, clases derivadas, jerarquía de herencia y lógica de cálculo de mantenimiento (polimorfismo).
+Estudiante B	Capa de repositorio con Dictionary, controlador MVC y vistas (Index, Details, Create, Edit, Delete).
+Ambos integrantes deben participar en la integración final y ser capaces de explicar cualquier parte del código durante la defensa oral.
+
+5. Entregables
+Proyecto ASP.NET MVC completo (código fuente).
+Documento breve (1–2 páginas) con:
+Diagrama de clases (UML simplificado) mostrando la herencia.
+Explicación de cómo se aplicó el polimorfismo en CalcularCostoMantenimiento().
+Repositorio Git (opcional según lineamientos del curso) con commits de ambos integrantes.
+6. Rúbrica de evaluación
+Criterio	Excelente (10)	Bueno (7-9)	Aceptable (4-6)	Deficiente (0-3)
+Diseño de la clase abstracta y jerarquía de herencia	La clase Vehiculo está correctamente definida como abstracta, con atributos y métodos bien encapsulados; existen 3 o más clases derivadas coherentes con atributos propios relevantes.	La jerarquía es correcta, pero con detalles menores (encapsulamiento incompleto, algún atributo mal ubicado) o solo cumple con el mínimo de clases derivadas.	La herencia funciona, pero el diseño es poco coherente (atributos repetidos, mala ubicación de responsabilidades entre clase base y derivadas).	No existe clase abstracta, la herencia está mal implementada o las clases derivadas no aportan diferenciación real.
+Polimorfismo en CalcularCostoMantenimiento() y métodos sobrescritos	Cada clase derivada sobrescribe correctamente el método con una fórmula propia y justificada; se usa override/virtual de forma adecuada y base cuando corresponde.	El polimorfismo funciona correctamente, pero alguna fórmula es poco diferenciada o el uso de base es inconsistente.	El método está sobrescrito, pero la lógica es genérica o se recurre parcialmente a validaciones tipo if/else por tipo en lugar de polimorfismo real.	No hay sobrescritura real, el cálculo es idéntico en todas las clases o se resuelve con estructuras condicionales por tipo, evitando el polimorfismo.
+Uso de Dictionary como almacenamiento (repositorio)	El repositorio usa Dictionary<string, Vehiculo> con la placa como llave, y todos los métodos (agregar, obtener, actualizar, eliminar) están implementados correctamente y validan casos borde (llave duplicada, no encontrada).	El Dictionary está bien implementado, pero falta alguna validación de casos borde o algún método tiene errores menores.	El Dictionary se usa, pero de forma incompleta o con errores que afectan parcialmente el funcionamiento (por ejemplo, no valida duplicados).	No se usa Dictionary como se solicitó, o su implementación no funciona correctamente para el almacenamiento de datos.
+Funcionamiento del CRUD en controlador y vistas MVC	Todas las acciones (Index, Details, Create, Edit, Delete) funcionan correctamente, las vistas muestran el tipo específico de vehículo y el formulario se adapta según el tipo seleccionado.	El CRUD funciona en su totalidad, pero con detalles de interfaz o de adaptación del formulario por tipo incompletos.	El CRUD funciona parcialmente (alguna acción falla o no está implementada) o las vistas no diferencian correctamente los tipos de vehículo.	El CRUD no funciona correctamente o faltan acciones esenciales del controlador.
+Trabajo colaborativo	Evidencia clara de aporte equilibrado de ambos integrantes (commits, división de módulos); ambos responden con dominio sobre cualquier parte del código en la defensa oral.	Se evidencia colaboración de ambos integrantes, aunque uno domina más el código que el otro en la defensa oral.	La colaboración es desigual y uno de los integrantes muestra dominio limitado del código durante la defensa.	No hay evidencia de trabajo conjunto o uno de los integrantes no puede explicar el código en la defensa oral.
+Calidad de código	Código limpio, bien organizado, con nombres descriptivos y comentarios pertinentes en las partes clave (herencia, polimorfismo, repositorio).	Código organizado y legible, con comentarios o nomenclatura mejorables en algunos puntos.	Código funcional, pero con organización deficiente, nombres poco descriptivos o ausencia de comentarios.	Código desordenado, difícil de leer, sin comentarios y con nomenclatura inconsistente.
+
+
+Fecha límite de entrega: viernes 11 de septiembre.
+
+Modalidad de defensa: presencial, en el horario de laboratorio asignado al curso. Ambos integrantes de la pareja deben presentarse; la inasistencia de alguno de los dos implica que ninguno recibe nota por el ejercicio.
