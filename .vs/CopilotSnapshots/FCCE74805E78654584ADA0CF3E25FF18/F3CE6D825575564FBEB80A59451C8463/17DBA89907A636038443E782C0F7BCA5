@@ -1,0 +1,219 @@
+﻿﻿@{
+ViewData["Title"] = "Inicio";
+}
+
+<div class="flota-home">
+
+    <section class="flota-hero">
+        <div class="flota-hero-text">
+            <h1>El control de tu flota, vehículo por vehículo.</h1>
+            <p>
+                Registrá camiones, automóviles y motocicletas, calculá el mantenimiento
+                anual de cada uno según su tipo y consultá todo en un solo lugar
+                &mdash; sin depender de una base de datos externa.
+            </p>
+            <a class="flota-cta" asp-controller="Vehiculos" asp-action="Index">Ver vehículos registrados</a>
+        </div>
+        <div class="flota-hero-plate" aria-hidden="true">
+            <span class="flota-plate-label">TransLogística SV</span>
+            <span class="flota-plate-code">P 342 &middot; 019</span>
+        </div>
+    </section>
+
+    <section class="flota-tipos">
+        <article class="flota-tipo">
+            <span class="flota-tag">Camión</span>
+            <h2>Capacidad de carga</h2>
+            <p>El mantenimiento se calcula con un costo base más un recargo por cada tonelada que el camión puede transportar.</p>
+        </article>
+
+        <article class="flota-tipo">
+            <span class="flota-tag">Automóvil</span>
+            <h2>Tipo de combustible</h2>
+            <p>El costo base sube cuando el vehículo usa gasolina premium; el resto de combustibles mantiene la tarifa estándar.</p>
+        </article>
+
+        <article class="flota-tipo">
+            <span class="flota-tag">Motocicleta</span>
+            <h2>Cilindraje</h2>
+            <p>Parte de un costo base reducido y solo agrega un recargo cuando el cilindraje supera los 500cc.</p>
+        </article>
+    </section>
+
+    <section class="flota-explica">
+        <div>
+            <h2>Cómo funciona</h2>
+            <p>
+                Cada vehículo se guarda con su placa, marca, modelo, año y kilometraje.
+                Al agregarlo, elegís su tipo y el sistema aplica automáticamente la
+                fórmula de mantenimiento que le corresponde &mdash; sin necesidad de
+                revisar manualmente qué tipo es cada uno.
+            </p>
+        </div>
+        <a class="flota-cta flota-cta-secondary" asp-controller="Vehiculos" asp-action="Create">Registrar un vehículo</a>
+    </section>
+
+</div>
+
+<style>
+    .flota-home {
+        --asphalt: #1B2027;
+        --asphalt-soft: #262D37;
+        --steel: #3E5C76;
+        --amber: #F2A93B;
+        --paper: #F6F4EF;
+        --ink-muted: #6B7280;
+        font-family: 'Inter', system-ui, sans-serif;
+        color: var(--asphalt);
+        margin: -1rem -0.75rem 0;
+    }
+
+        .flota-home h1,
+        .flota-home h2 {
+            font-family: 'Oswald', system-ui, sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            margin: 0;
+        }
+
+    .flota-hero {
+        background: var(--asphalt);
+        color: var(--paper);
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        align-items: center;
+        gap: 2.5rem;
+        padding: 3.5rem 3rem;
+        border-radius: 0 0 18px 18px;
+    }
+
+    .flota-hero-text h1 {
+        font-size: 2.4rem;
+        line-height: 1.2;
+        max-width: 16ch;
+    }
+
+    .flota-hero-text p {
+        max-width: 46ch;
+        color: #C9CDD3;
+        margin: 1.1rem 0 1.6rem;
+        line-height: 1.55;
+    }
+
+    .flota-cta {
+        display: inline-block;
+        background: var(--amber);
+        color: var(--asphalt);
+        font-weight: 600;
+        padding: 0.7rem 1.4rem;
+        border-radius: 6px;
+        text-decoration: none;
+    }
+
+        .flota-cta:hover {
+            background: #e0982c;
+            color: var(--asphalt);
+        }
+
+    .flota-hero-plate {
+        justify-self: end;
+        border: 3px dashed #4A5567;
+        border-radius: 10px;
+        padding: 1.1rem 1.6rem;
+        text-align: center;
+        color: #9AA2AD;
+    }
+
+    .flota-plate-label {
+        display: block;
+        font-size: 0.8rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .flota-plate-code {
+        display: block;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 1.6rem;
+        color: var(--paper);
+        letter-spacing: 0.08em;
+    }
+
+    .flota-tipos {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        padding: 2.5rem 3rem 0;
+    }
+
+    .flota-tipo {
+        border-left: 3px solid var(--steel);
+        padding: 0.2rem 0 0.2rem 1.1rem;
+    }
+
+    .flota-tag {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.8rem;
+        color: var(--steel);
+    }
+
+    .flota-tipo h2 {
+        font-size: 1.25rem;
+        margin: 0.4rem 0 0.5rem;
+    }
+
+    .flota-tipo p {
+        color: var(--ink-muted);
+        line-height: 1.5;
+        margin: 0;
+        max-width: 32ch;
+    }
+
+    .flota-explica {
+        display: grid;
+        grid-template-columns: 2fr auto;
+        align-items: center;
+        gap: 2rem;
+        margin: 2.5rem 3rem 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid #E4E1D8;
+    }
+
+        .flota-explica p {
+            color: var(--ink-muted);
+            line-height: 1.55;
+            max-width: 60ch;
+            margin: 0.6rem 0 0;
+        }
+
+    .flota-cta-secondary {
+        background: transparent;
+        color: var(--asphalt);
+        border: 2px solid var(--asphalt);
+        white-space: nowrap;
+    }
+
+        .flota-cta-secondary:hover {
+            background: var(--asphalt);
+            color: var(--paper);
+        }
+
+    @media (max-width: 900px) {
+        .flota-hero,
+        .flota-tipos,
+        .flota-explica {
+            grid-template-columns: 1fr;
+        }
+
+        .flota-hero-plate {
+            justify-self: start;
+        }
+
+        .flota-explica {
+            margin: 2rem 1.25rem;
+        }
+
+        .flota-tipos {
+            padding: 2rem 1.25rem 0;
+        }
+    }
+</style>

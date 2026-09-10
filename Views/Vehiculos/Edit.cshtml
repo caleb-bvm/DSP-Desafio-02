@@ -1,0 +1,22 @@
+﻿@model VehiculoFormulario
+
+@{
+    ViewData["Title"] = "Editar vehículo";
+}
+
+<h1>Editar vehículo</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden"
+           name="placaOriginal"
+           value="@ViewBag.PlacaOriginal" />
+
+    <partial name="_Formulario" model="Model" />
+
+    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

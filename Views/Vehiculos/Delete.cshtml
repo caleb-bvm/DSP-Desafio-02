@@ -1,0 +1,18 @@
+﻿@model Vehiculo
+
+@{
+    ViewData["Title"] = "Eliminar vehículo";
+}
+
+<h1>Eliminar vehículo</h1>
+
+<p>¿Desea eliminar este vehículo?</p>
+
+<p><strong>@Model.ObtenerResumen()</strong></p>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" name="placa" value="@Model.Placa" />
+
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
