@@ -4,20 +4,32 @@
     ViewData["Title"] = "Vehículos";
 }
 
-<h1>Vehículos de la flota</h1>
-
-<p>
+<div class="page-heading">
+    <div>
+        <h1>Vehículos de la flota</h1>
+        <p class="text-muted mb-0">Consulte y administre los vehículos registrados.</p>
+    </div>
     <a asp-action="Create" class="btn btn-primary">Registrar vehículo</a>
-</p>
+</div>
+
+@if (TempData["Mensaje"] is string mensaje)
+{
+    <div class="alert alert-success" role="status">@mensaje</div>
+}
+
+<p class="fleet-count">Total de vehículos registrados: <strong>@Model.Count</strong></p>
 
 @if (Model.Count == 0)
 {
-    <p>No hay vehículos registrados.</p>
+    <div class="empty-state">
+        <h2>Su flota comienza aquí</h2>
+        <p class="text-muted mb-0">No hay vehículos registrados. Use «Registrar vehículo» para agregar el primero.</p>
+    </div>
 }
 else
 {
     <div class="table-responsive">
-        <table class="table table-striped">
+        <table class="table table-striped table-hover">
             <thead>
                 <tr>
                     <th>Placa</th>
@@ -34,7 +46,7 @@ else
                 @foreach (var vehiculo in Model)
                 {
                     <tr>
-                        <td>@vehiculo.Placa</td>
+                        <td class="vehicle-plate">@vehiculo.Placa</td>
                         <td>
                             @if (vehiculo is Camion)
                             {
@@ -56,15 +68,13 @@ else
                         <td>
                             @vehiculo.CalcularCostoMantenimiento().ToString("N2")
                         </td>
-                        <td>
+                        <td class="vehicle-actions">
                             <a asp-action="Details"
-                               asp-route-placa="@vehiculo.Placa">Detalle</a>
-                            |
+                               asp-route-placa="@vehiculo.Placa" class="btn btn-sm btn-outline-primary">Detalle</a>
                             <a asp-action="Edit"
-                               asp-route-placa="@vehiculo.Placa">Editar</a>
-                            |
+                               asp-route-placa="@vehiculo.Placa" class="btn btn-sm btn-outline-secondary">Editar</a>
                             <a asp-action="Delete"
-                               asp-route-placa="@vehiculo.Placa">Eliminar</a>
+                               asp-route-placa="@vehiculo.Placa" class="btn btn-sm btn-outline-danger">Eliminar</a>
                         </td>
                     </tr>
                 }

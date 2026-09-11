@@ -18,7 +18,9 @@ html {
 body {
     margin: 0;
     padding: 0;
-    margin-bottom: 60px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     background-color: #f4f7fb;
     font-family: "Segoe UI", Arial, sans-serif;
     color: #263238;
@@ -52,6 +54,29 @@ body {
 
 .container {
     max-width: 1200px;
+}
+
+body > .container {
+    flex: 1;
+}
+
+.formulario-vehiculo {
+    max-width: 700px;
+    padding: 24px;
+    background-color: white;
+    border: 1px solid #dce3eb;
+    border-radius: 14px;
+    box-shadow: 0 6px 24px rgba(22, 50, 79, 0.06);
+}
+
+.input-validation-error {
+    border-color: #c62828;
+}
+
+.field-validation-error {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.9rem;
 }
 
 
@@ -112,10 +137,12 @@ h3 {
 
 
 .table {
+    --bs-table-striped-bg: #f8fafc;
+    --bs-table-hover-bg: #eef5fc;
     background-color: white;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 0;
     vertical-align: middle;
 }
 
@@ -125,6 +152,8 @@ h3 {
     }
 
         .table thead th {
+            background-color: #16324f;
+            color: white;
             padding: 15px;
             border: none;
         }
@@ -178,6 +207,82 @@ h3 {
 .form-label {
     font-weight: 600;
     color: #37474f;
+}
+
+main {
+    padding-top: 18px;
+}
+
+.page-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.page-heading h1 {
+    margin-bottom: 8px;
+}
+
+.fleet-count {
+    color: #526475;
+    margin-bottom: 16px;
+}
+
+.fleet-count strong {
+    color: #16324f;
+}
+
+.table-responsive {
+    border: 1px solid #dce3eb;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(22, 50, 79, 0.05);
+}
+
+.vehicle-plate {
+    font-weight: 700;
+    overflow-wrap: anywhere;
+    min-width: 110px;
+    max-width: 220px;
+}
+
+.vehicle-actions {
+    white-space: nowrap;
+}
+
+.vehicle-actions .btn {
+    padding: 6px 9px;
+    font-size: 0.8rem;
+}
+
+.empty-state {
+    background: white;
+    border: 1px dashed #b9c9da;
+    border-radius: 14px;
+    padding: 48px 24px;
+    text-align: center;
+}
+
+.empty-state h2 {
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #1976d2;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn,
+    .stat-card,
+    .navbar .nav-link {
+        transition: none;
+        transform: none;
+    }
 }
 
 

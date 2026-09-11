@@ -8,7 +8,7 @@ namespace DSPDesafio02.Controllers
 	{
 		public IActionResult Index()
 		{
-			return View();
+			return RedirectToAction("Index", "Vehiculos");
 		}
 
 		public IActionResult Privacy()

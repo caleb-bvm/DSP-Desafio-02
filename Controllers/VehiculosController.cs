@@ -58,6 +58,7 @@ namespace DSPDesafio02.Controllers
 				return View(formulario);
 			}
 
+			TempData["Mensaje"] = "Vehículo registrado correctamente.";
 			return RedirectToAction(nameof(Index));
 		}
 
@@ -113,6 +114,7 @@ namespace DSPDesafio02.Controllers
 				return View(formulario);
 			}
 
+			TempData["Mensaje"] = "Vehículo actualizado correctamente.";
 			return RedirectToAction(nameof(Index));
 		}
 
@@ -145,20 +147,35 @@ namespace DSPDesafio02.Controllers
 				return NotFound();
 			}
 
+			TempData["Mensaje"] = "Vehículo eliminado correctamente.";
 			return RedirectToAction(nameof(Index));
 		}
 
 		private void ValidarFormulario(VehiculoFormulario formulario)
 		{
+			if (formulario.Anio > DateTime.Now.Year + 1)
+			{
+				ModelState.AddModelError(nameof(formulario.Anio),
+					$"El año no puede ser mayor que {DateTime.Now.Year + 1}.");
+			}
+
+			if (!double.IsFinite(formulario.Kilometraje))
+			{
+				ModelState.AddModelError(nameof(formulario.Kilometraje),
+					"Ingrese un kilometraje válido.");
+			}
+
 			switch (formulario.TipoVehiculo)
 			{
 				case "Camion":
 					if (formulario.CapacidadCargaToneladas == null ||
-						formulario.CapacidadCargaToneladas <= 0)
+						formulario.CapacidadCargaToneladas <= 0 ||
+						!double.IsFinite(formulario.CapacidadCargaToneladas.GetValueOrDefault()) ||
+						!double.IsFinite(1000 + formulario.CapacidadCargaToneladas.GetValueOrDefault() * 100))
 					{
 						ModelState.AddModelError(
 							nameof(formulario.CapacidadCargaToneladas),
-							"Ingrese una capacidad mayor que cero.");
+							"Ingrese una capacidad válida mayor que cero.");
 					}
 					break;
 
@@ -224,7 +241,7 @@ namespace DSPDesafio02.Controllers
 					throw new ArgumentException("Tipo de vehículo inválido.");
 			}
 
-			vehiculo.Placa = formulario.Placa.Trim();
+			vehiculo.Placa = formulario.Placa.Trim().ToUpperInvariant();
 			vehiculo.Marca = formulario.Marca.Trim();
 			vehiculo.Modelo = formulario.Modelo.Trim();
 			vehiculo.Anio = formulario.Anio;

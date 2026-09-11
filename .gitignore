@@ -1,0 +1,66 @@
+# Compilacion y publicacion de .NET
+[Bb]in/
+[Oo]bj/
+[Aa]rtifacts/
+[Pp]ublish/
+
+# Configuracion local de Visual Studio y otros editores
+.vs/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+*.sln.iml
+_ReSharper*/
+*.DotSettings.user
+
+# Paquetes y dependencias restaurables
+packages/
+*.nupkg
+*.snupkg
+node_modules/
+
+# Resultados de pruebas, cobertura y registros
+[Tt]est[Rr]esults/
+coverage/
+*.coverage
+*.coveragexml
+*.trx
+*.log
+logs/
+
+# Secretos y configuracion privada (conservar plantillas de ejemplo)
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+appsettings.Local.json
+appsettings.*.Local.json
+secrets.json
+*.pfx
+*.p12
+*.key
+*.pubxml
+*.publishsettings
+
+# Bases de datos locales de SQL Server
+*.mdf
+*.ldf
+*.ndf
+
+# Archivos temporales y del sistema operativo
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Conservar appsettings.json, appsettings.Development.json,
+# Properties/launchSettings.json y wwwroot/lib: son parte del proyecto.

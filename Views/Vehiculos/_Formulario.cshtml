@@ -1,11 +1,11 @@
 ﻿@model VehiculoFormulario
 
-<div asp-validation-summary="All" class="text-danger"></div>
+<div asp-validation-summary="All" class="text-danger" role="alert"></div>
 
 <div class="mb-3">
     <label asp-for="TipoVehiculo" class="form-label"></label>
     <select asp-for="TipoVehiculo" class="form-select">
-        <option value="">Seleccione un tipo</option>
+        <option value=""></option>
         <option value="Camion">Camión</option>
         <option value="Automovil">Automóvil</option>
         <option value="Motocicleta">Motocicleta</option>
@@ -21,20 +21,22 @@
 
 <div class="mb-3">
     <label asp-for="Marca" class="form-label"></label>
-    <input asp-for="Marca" class="form-control" />
+    <input asp-for="Marca" class="form-control" maxlength="50" />
     <span asp-validation-for="Marca" class="text-danger"></span>
 </div>
 
 <div class="mb-3">
     <label asp-for="Modelo" class="form-label"></label>
-    <input asp-for="Modelo" class="form-control" />
+    <input asp-for="Modelo" class="form-control" maxlength="50" />
     <span asp-validation-for="Modelo" class="text-danger"></span>
 </div>
 
 <div class="mb-3">
     <label asp-for="Anio" class="form-label"></label>
     <input asp-for="Anio" class="form-control"
-           type="number" min="1" max="9999" />
+           type="number" min="1886" max="@(DateTime.Now.Year + 1)"
+           data-val-range-max="@(DateTime.Now.Year + 1)"
+           data-val-range="Ingrese un año entre 1886 y @(DateTime.Now.Year + 1)." />
     <span asp-validation-for="Anio" class="text-danger"></span>
 </div>
 
@@ -48,7 +50,7 @@
 <div class="mb-3" data-tipo="Camion">
     <label asp-for="CapacidadCargaToneladas" class="form-label"></label>
     <input asp-for="CapacidadCargaToneladas" class="form-control"
-           type="number" min="0" step="any" />
+           type="number" min="0.01" step="any" />
     <span asp-validation-for="CapacidadCargaToneladas"
           class="text-danger"></span>
 </div>
@@ -56,7 +58,7 @@
 <div class="mb-3" data-tipo="Automovil">
     <label asp-for="TipoCombustible" class="form-label"></label>
     <select asp-for="TipoCombustible" class="form-select">
-        <option value="">Seleccione un combustible</option>
+        <option value=""></option>
         <option value="Gasolina Regular">Gasolina Regular</option>
         <option value="Gasolina Premium">Gasolina Premium</option>
         <option value="Diésel">Diésel</option>

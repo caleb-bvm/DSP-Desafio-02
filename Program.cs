@@ -1,7 +1,15 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(options =>
+{
+	options.ModelBindingMessageProvider.SetValueMustNotBeNullAccessor(
+		_ => "Este campo es obligatorio.");
+	options.ModelBindingMessageProvider.SetAttemptedValueIsInvalidAccessor(
+		(_, campo) => $"Ingrese un valor válido para {campo}.");
+	options.ModelBindingMessageProvider.SetValueMustBeANumberAccessor(
+		campo => $"Ingrese un número válido para {campo}.");
+});
 
 var app = builder.Build();
 
@@ -22,7 +30,7 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
 	name: "default",
-	pattern: "{controller=Home}/{action=Index}/{id?}")
+	pattern: "{controller=Vehiculos}/{action=Index}/{id?}")
 	.WithStaticAssets();
 
 

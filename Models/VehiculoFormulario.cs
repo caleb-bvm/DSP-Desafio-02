@@ -12,12 +12,14 @@ namespace DSPDesafio02.Models
 		public string Placa { get; set; } = string.Empty;
 
 		[Required(ErrorMessage = "Ingrese la marca.")]
+		[StringLength(50, ErrorMessage = "La marca no debe superar los 50 caracteres.")]
 		public string Marca { get; set; } = string.Empty;
 
 		[Required(ErrorMessage = "Ingrese el modelo.")]
+		[StringLength(50, ErrorMessage = "El modelo no debe superar los 50 caracteres.")]
 		public string Modelo { get; set; } = string.Empty;
 
-		[Range(1, 9999, ErrorMessage = "Ingrese un año entre 1 y 9999.")]
+		[Range(1886, 9999, ErrorMessage = "El año debe ser igual o mayor que 1886.")]
 		[Display(Name = "Año")]
 		public int Anio { get; set; }
 
@@ -26,6 +28,7 @@ namespace DSPDesafio02.Models
 		public double Kilometraje { get; set; }
 
 		[Display(Name = "Capacidad de carga en toneladas")]
+		[Range(0.01, double.MaxValue, ErrorMessage = "La capacidad debe ser de al menos 0.01 toneladas.")]
 		public double? CapacidadCargaToneladas { get; set; }
 
 		[Display(Name = "Tipo de combustible")]
