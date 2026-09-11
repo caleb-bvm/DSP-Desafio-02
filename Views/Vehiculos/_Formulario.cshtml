@@ -1,0 +1,94 @@
+﻿@model VehiculoFormulario
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<div class="mb-3">
+    <label asp-for="TipoVehiculo" class="form-label"></label>
+    <select asp-for="TipoVehiculo" class="form-select">
+        <option value="">Seleccione un tipo</option>
+        <option value="Camion">Camión</option>
+        <option value="Automovil">Automóvil</option>
+        <option value="Motocicleta">Motocicleta</option>
+    </select>
+    <span asp-validation-for="TipoVehiculo" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Placa" class="form-label"></label>
+    <input asp-for="Placa" class="form-control" />
+    <span asp-validation-for="Placa" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Marca" class="form-label"></label>
+    <input asp-for="Marca" class="form-control" />
+    <span asp-validation-for="Marca" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Modelo" class="form-label"></label>
+    <input asp-for="Modelo" class="form-control" />
+    <span asp-validation-for="Modelo" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Anio" class="form-label"></label>
+    <input asp-for="Anio" class="form-control"
+           type="number" min="1" max="9999" />
+    <span asp-validation-for="Anio" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Kilometraje" class="form-label"></label>
+    <input asp-for="Kilometraje" class="form-control"
+           type="number" min="0" step="any" />
+    <span asp-validation-for="Kilometraje" class="text-danger"></span>
+</div>
+
+<div class="mb-3" data-tipo="Camion">
+    <label asp-for="CapacidadCargaToneladas" class="form-label"></label>
+    <input asp-for="CapacidadCargaToneladas" class="form-control"
+           type="number" min="0" step="any" />
+    <span asp-validation-for="CapacidadCargaToneladas"
+          class="text-danger"></span>
+</div>
+
+<div class="mb-3" data-tipo="Automovil">
+    <label asp-for="TipoCombustible" class="form-label"></label>
+    <select asp-for="TipoCombustible" class="form-select">
+        <option value="">Seleccione un combustible</option>
+        <option value="Gasolina Regular">Gasolina Regular</option>
+        <option value="Gasolina Premium">Gasolina Premium</option>
+        <option value="Diésel">Diésel</option>
+    </select>
+    <span asp-validation-for="TipoCombustible" class="text-danger"></span>
+</div>
+
+<div class="mb-3" data-tipo="Motocicleta">
+    <label asp-for="Cilindraje" class="form-label"></label>
+    <input asp-for="Cilindraje" class="form-control"
+           type="number" min="1" step="1" />
+    <span asp-validation-for="Cilindraje" class="text-danger"></span>
+</div>
+
+<script>
+    function actualizarCampos() {
+        const tipo = document.getElementById("TipoVehiculo").value;
+        const grupos = document.querySelectorAll("[data-tipo]");
+
+        grupos.forEach(function (grupo) {
+            const visible = grupo.dataset.tipo === tipo;
+            grupo.hidden = !visible;
+
+            grupo.querySelectorAll("input, select").forEach(function (campo) {
+                campo.disabled = !visible;
+                campo.required = visible;
+            });
+        });
+    }
+
+    document.getElementById("TipoVehiculo")
+        .addEventListener("change", actualizarCampos);
+
+    actualizarCampos();
+</script>

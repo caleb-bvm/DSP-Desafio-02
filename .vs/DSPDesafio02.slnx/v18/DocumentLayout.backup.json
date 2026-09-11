@@ -1,7 +1,48 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\caleb\\Documents\\Estudios\\Universidad\\TECNICO\\CICLO02\\DSP\\DSP Laboratorio\\DSPDesafio02\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|c:\\users\\ivania\\desktop\\dsp-desafio-02\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|c:\\users\\ivania\\desktop\\dsp-desafio-02\\views\\vehiculos\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|solutionrelative:views\\vehiculos\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|c:\\users\\ivania\\desktop\\dsp-desafio-02\\views\\vehiculos\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|solutionrelative:views\\vehiculos\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|c:\\users\\ivania\\desktop\\dsp-desafio-02\\views\\vehiculos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|solutionrelative:views\\vehiculos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|c:\\users\\ivania\\desktop\\dsp-desafio-02\\views\\vehiculos\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|solutionrelative:views\\vehiculos\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|c:\\users\\ivania\\desktop\\dsp-desafio-02\\views\\vehiculos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|solutionrelative:views\\vehiculos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|c:\\users\\ivania\\desktop\\dsp-desafio-02\\views\\vehiculos\\_formulario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|solutionrelative:views\\vehiculos\\_formulario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|c:\\users\\ivania\\desktop\\dsp-desafio-02\\controllers\\vehiculoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|solutionrelative:controllers\\vehiculoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|c:\\users\\ivania\\desktop\\dsp-desafio-02\\models\\vehiculoformulario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|solutionrelative:models\\vehiculoformulario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|c:\\users\\ivania\\desktop\\dsp-desafio-02\\models\\vehiculorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|solutionrelative:models\\vehiculorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +50,129 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAAE8AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-10T01:09:55.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Views\\Vehiculos\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\Vehiculos\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Views\\Vehiculos\\Delete.cshtml",
+              "RelativeToolTip": "Views\\Vehiculos\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-10T01:09:28.247Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Views\\Vehiculos\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Vehiculos\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Views\\Vehiculos\\Details.cshtml",
+              "RelativeToolTip": "Views\\Vehiculos\\Details.cshtml",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAAD0AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-10T01:08:20.283Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Views\\Vehiculos\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Vehiculos\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Views\\Vehiculos\\Index.cshtml",
+              "RelativeToolTip": "Views\\Vehiculos\\Index.cshtml",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAAEkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-10T01:07:38.241Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Views\\Vehiculos\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Vehiculos\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Views\\Vehiculos\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Vehiculos\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-10T01:07:15.856Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Views\\Vehiculos\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Vehiculos\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Views\\Vehiculos\\Create.cshtml",
+              "RelativeToolTip": "Views\\Vehiculos\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-10T01:06:49.943Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Formulario.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Views\\Vehiculos\\_Formulario.cshtml",
+              "RelativeDocumentMoniker": "Views\\Vehiculos\\_Formulario.cshtml",
+              "ToolTip": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Views\\Vehiculos\\_Formulario.cshtml",
+              "RelativeToolTip": "Views\\Vehiculos\\_Formulario.cshtml",
+              "ViewState": "AgIAADcAAAAAAAAAAAAgwF0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-10T01:06:00.324Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "VehiculosController.cs",
+              "DocumentMoniker": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Controllers\\VehiculosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\VehiculosController.cs",
+              "ToolTip": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Controllers\\VehiculosController.cs",
+              "RelativeToolTip": "Controllers\\VehiculosController.cs",
+              "ViewState": "AgIAAOYAAAAAAAAAAAAuwAoBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-10T01:04:40.401Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "VehiculoFormulario.cs",
+              "DocumentMoniker": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Models\\VehiculoFormulario.cs",
+              "RelativeDocumentMoniker": "Models\\VehiculoFormulario.cs",
+              "ToolTip": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Models\\VehiculoFormulario.cs",
+              "RelativeToolTip": "Models\\VehiculoFormulario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-10T01:04:13.364Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "VehiculoRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Models\\VehiculoRepositorio.cs",
+              "RelativeDocumentMoniker": "Models\\VehiculoRepositorio.cs",
+              "ToolTip": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Models\\VehiculoRepositorio.cs",
+              "RelativeToolTip": "Models\\VehiculoRepositorio.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAADQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-10T01:02:34.226Z"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"

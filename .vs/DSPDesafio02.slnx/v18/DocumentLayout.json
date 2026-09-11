@@ -1,7 +1,20 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\caleb\\Documents\\Estudios\\Universidad\\TECNICO\\CICLO02\\DSP\\DSP Laboratorio\\DSPDesafio02\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|c:\\users\\ivania\\desktop\\dsp-desafio-02\\views\\vehiculos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|solutionrelative:views\\vehiculos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|c:\\users\\ivania\\desktop\\dsp-desafio-02\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|c:\\users\\ivania\\desktop\\dsp-desafio-02\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5CA468E0-5E68-90DC-BFFA-DC91D4DABD48}|DSPDesafio02.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +22,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAALcAAAAAAAAAAAAkwBEAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-10T01:58:47.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAtwA8AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-10T01:09:55.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Views\\Vehiculos\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Vehiculos\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Ivania\\Desktop\\DSP-Desafio-02\\Views\\Vehiculos\\Index.cshtml",
+              "RelativeToolTip": "Views\\Vehiculos\\Index.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAEkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-10T01:07:38.241Z",
+              "EditorCaption": ""
             }
           ]
         },

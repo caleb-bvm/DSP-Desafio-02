@@ -1,0 +1,62 @@
+﻿@model Vehiculo
+
+@{
+    ViewData["Title"] = "Detalle del vehículo";
+}
+
+<h1>Detalle del vehículo</h1>
+
+<p>@Model.ObtenerResumen()</p>
+
+<dl class="row">
+    <dt class="col-sm-4">Placa</dt>
+    <dd class="col-sm-8">@Model.Placa</dd>
+
+    <dt class="col-sm-4">Marca</dt>
+    <dd class="col-sm-8">@Model.Marca</dd>
+
+    <dt class="col-sm-4">Modelo</dt>
+    <dd class="col-sm-8">@Model.Modelo</dd>
+
+    <dt class="col-sm-4">Año</dt>
+    <dd class="col-sm-8">@Model.Anio</dd>
+
+    <dt class="col-sm-4">Kilometraje</dt>
+    <dd class="col-sm-8">@Model.Kilometraje.ToString("N2")</dd>
+
+    @if (Model is Camion camion)
+    {
+        <dt class="col-sm-4">Tipo</dt>
+        <dd class="col-sm-8">Camión</dd>
+
+        <dt class="col-sm-4">Capacidad de carga</dt>
+        <dd class="col-sm-8">@camion.CapacidadCargaToneladas toneladas</dd>
+    }
+    else if (Model is Automovil automovil)
+    {
+        <dt class="col-sm-4">Tipo</dt>
+        <dd class="col-sm-8">Automóvil</dd>
+
+        <dt class="col-sm-4">Combustible</dt>
+        <dd class="col-sm-8">@automovil.TipoCombustible</dd>
+    }
+    else if (Model is Motocicleta motocicleta)
+    {
+        <dt class="col-sm-4">Tipo</dt>
+        <dd class="col-sm-8">Motocicleta</dd>
+
+        <dt class="col-sm-4">Cilindraje</dt>
+        <dd class="col-sm-8">@motocicleta.Cilindraje cc</dd>
+    }
+
+    <dt class="col-sm-4">Mantenimiento anual (USD)</dt>
+    <dd class="col-sm-8">
+        @Model.CalcularCostoMantenimiento().ToString("N2")
+    </dd>
+</dl>
+
+<a asp-action="Edit"
+   asp-route-placa="@Model.Placa"
+   class="btn btn-primary">Editar</a>
+
+<a asp-action="Index" class="btn btn-secondary">Volver</a>

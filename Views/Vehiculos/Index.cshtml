@@ -1,0 +1,74 @@
+﻿@model List<Vehiculo>
+
+@{
+    ViewData["Title"] = "Vehículos";
+}
+
+<h1>Vehículos de la flota</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Registrar vehículo</a>
+</p>
+
+@if (Model.Count == 0)
+{
+    <p>No hay vehículos registrados.</p>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Placa</th>
+                    <th>Tipo</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Año</th>
+                    <th>Kilometraje</th>
+                    <th>Mantenimiento anual (USD)</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var vehiculo in Model)
+                {
+                    <tr>
+                        <td>@vehiculo.Placa</td>
+                        <td>
+                            @if (vehiculo is Camion)
+                            {
+                                <span>Camión</span>
+                            }
+                            else if (vehiculo is Automovil)
+                            {
+                                <span>Automóvil</span>
+                            }
+                            else if (vehiculo is Motocicleta)
+                            {
+                                <span>Motocicleta</span>
+                            }
+                        </td>
+                        <td>@vehiculo.Marca</td>
+                        <td>@vehiculo.Modelo</td>
+                        <td>@vehiculo.Anio</td>
+                        <td>@vehiculo.Kilometraje.ToString("N2")</td>
+                        <td>
+                            @vehiculo.CalcularCostoMantenimiento().ToString("N2")
+                        </td>
+                        <td>
+                            <a asp-action="Details"
+                               asp-route-placa="@vehiculo.Placa">Detalle</a>
+                            |
+                            <a asp-action="Edit"
+                               asp-route-placa="@vehiculo.Placa">Editar</a>
+                            |
+                            <a asp-action="Delete"
+                               asp-route-placa="@vehiculo.Placa">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
